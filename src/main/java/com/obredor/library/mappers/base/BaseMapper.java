@@ -1,6 +1,8 @@
 package com.obredor.library.mappers.base;
 
-public interface BaseMapper<E, D> {
+import com.obredor.library.models.entities.BaseEntity;
+
+public interface BaseMapper<E extends BaseEntity<?>, D> {
   
   D toDto(E entity);
 

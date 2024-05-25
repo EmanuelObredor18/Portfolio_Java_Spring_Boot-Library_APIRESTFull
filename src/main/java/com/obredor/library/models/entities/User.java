@@ -24,7 +24,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class User {
+public class User implements BaseEntity<UserId> {
 
   @EmbeddedId
   private UserId userId;
@@ -59,4 +59,9 @@ public class User {
   @JoinColumn(name = "userContactId", referencedColumnName = "userContactId", nullable = false)
   @NotNull(message = "{validation.requiredField}")
   private UserContact userContact;
+
+  @Override
+  public UserId getId() {
+    return this.userId;
+  }
 }

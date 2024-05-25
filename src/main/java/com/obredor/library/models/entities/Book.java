@@ -21,7 +21,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class Book {
+public class Book implements BaseEntity<String> {
 
   @Id
   @Column(length = 17)
@@ -46,4 +46,9 @@ public class Book {
 
   @OneToMany(mappedBy = "book")
   private Set<Loan> loans;
+
+  @Override
+  public String getId() {
+    return this.bookIsbn;
+  }
 }
