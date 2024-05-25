@@ -5,7 +5,9 @@ import java.lang.reflect.ParameterizedType;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public abstract class GenericMapper<E, D> implements BaseMapper<E, D> {
+import com.obredor.library.models.entities.BaseEntity;
+
+public abstract class GenericMapper<E extends BaseEntity<?>, D> implements BaseMapper<E, D> {
 
   @Autowired
   private ModelMapper modelMapper;
@@ -21,11 +23,13 @@ public abstract class GenericMapper<E, D> implements BaseMapper<E, D> {
 
   @Override
   public D toDto(E entity) {
+    if (entity == null) throw new IllegalArgumentException("Entity cannot be null"); 
     return modelMapper.map(entity, dtoClass);
   }
 
   @Override
   public E toEntity(D dto) {
+    if (dto == null) throw new IllegalArgumentException("Entity cannot be null");
     return modelMapper.map(dto, entityClass);
   }
 }
