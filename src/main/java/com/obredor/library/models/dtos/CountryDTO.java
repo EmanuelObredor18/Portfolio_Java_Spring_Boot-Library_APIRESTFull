@@ -1,7 +1,5 @@
 package com.obredor.library.models.dtos;
 
-import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Builder;
@@ -11,15 +9,8 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class LoanDTO {
-  
-  private Long loanId;
+public class CountryDTO {
+  private String isoCode;
 
-  private Date startLoanDate;
-
-  private Date finishLoanDate;
-
-  private UserDTO user;
-
-  private BookDTO book;
+  private String name;
 }
