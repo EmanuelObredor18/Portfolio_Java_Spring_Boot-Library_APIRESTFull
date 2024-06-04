@@ -1,4 +1,4 @@
-package com.obredor.library.repositories;
+package com.obredor.library.repositories.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.obredor.library.models.entities.City;
-import com.obredor.library.repositories.CityRepository;
+import com.obredor.library.repositories.user_location.CityRepository;
 
 @SpringBootTest
 public class CityTest {
