@@ -13,6 +13,8 @@ import com.obredor.library.errors.exceptions.EntityWithExistingIdException;
 import com.obredor.library.mappers.base.BaseMapper;
 import com.obredor.library.models.entities.BaseEntity;
 
+// TODO: Crear interfaces para solo lectura e inserción de datos
+
 public class BaseService<T extends BaseEntity<ID>, D, ID> {
 
   private static final String ENTITY_SAVED_SUCCESSFULLY = "Entity saved successfully";
