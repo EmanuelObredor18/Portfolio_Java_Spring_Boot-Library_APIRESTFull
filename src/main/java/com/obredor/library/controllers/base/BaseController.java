@@ -14,7 +14,7 @@ import com.obredor.library.services.base.BaseService;
 import jakarta.validation.Valid;
 
 @PreAuthorize("denyAll()")
-public class BaseController<T extends BaseEntity<ID>, ID, S extends BaseService<T, ?, ID, ?>> {
+public class BaseController<T extends BaseEntity<ID>, ID, S extends BaseService<T, ?, ID>> {
   
   @Autowired
   private S service;
