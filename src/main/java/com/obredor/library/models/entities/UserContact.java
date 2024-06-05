@@ -21,7 +21,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class UserContact {
+public class UserContact implements BaseEntity<Long> {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,4 +39,9 @@ public class UserContact {
 
   @OneToOne(mappedBy = "userContact")
   private User user;
+
+  @Override
+  public Long getId() {
+    return this.userContactId;
+  }
 }

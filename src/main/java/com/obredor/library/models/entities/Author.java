@@ -23,7 +23,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class Author {
+public class Author implements BaseEntity<Long> {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,4 +40,9 @@ public class Author {
 
   @ManyToMany(mappedBy = "authors")
   private Set<Book> books;
+
+  @Override
+  public Long getId() {
+    return this.authorId;
+  }
 }

@@ -18,7 +18,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class PhoneNumber {
+public class PhoneNumber implements BaseEntity<PhoneNumberId> {
   
   @EmbeddedId
   private PhoneNumberId phoneNumberId;
@@ -26,4 +26,9 @@ public class PhoneNumber {
   @OneToOne
   @JoinColumn(name = "prefixId", referencedColumnName = "prefixId", insertable = false, updatable = false)
   private NumberPrefix numberPrefix;
+
+  @Override
+  public PhoneNumberId getId() {
+    return this.phoneNumberId;
+  }
 }

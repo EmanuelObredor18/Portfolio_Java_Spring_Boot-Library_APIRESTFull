@@ -21,7 +21,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class City {
+public class City implements BaseEntity<String> {
   
   @Id
   @Column(length = 6)
@@ -46,5 +46,10 @@ public class City {
   @PrePersist
   public void generateCityCode() {
     this.cityId = CityCodeGenerator.generateCityCode(this.cityName, administrativeDivisionCode);
+  }
+
+  @Override
+  public String getId() {
+    return this.cityId;
   }
 }

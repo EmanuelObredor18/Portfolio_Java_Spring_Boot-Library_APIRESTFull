@@ -15,7 +15,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class NumberPrefix {
+public class NumberPrefix implements BaseEntity<String> {
 
   @Id
   @Column(length = 6)
@@ -23,4 +23,9 @@ public class NumberPrefix {
 
   @Column(length = 30, nullable = false)
   private String prefixCountry;
+
+  @Override
+  public String getId() {
+    return this.prefixId;
+  }
 }

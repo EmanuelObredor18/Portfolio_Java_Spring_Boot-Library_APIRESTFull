@@ -24,7 +24,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class Loan {
+public class Loan implements BaseEntity<Long> {
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,5 +47,10 @@ public class Loan {
   @ManyToOne
   @JoinColumn(name = "bookIsbn", referencedColumnName = "bookIsbn", nullable = false)
   private Book book;
+
+  @Override
+  public Long getId() {
+    return this.loanId;
+  }
 }
 
