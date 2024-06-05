@@ -15,7 +15,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class Country {
+public class Country implements BaseEntity<String> {
   
   @Id
   @Column(length = 3)
@@ -23,5 +23,10 @@ public class Country {
 
   @Column(length = 50, nullable = false)
   private String name;
+
+  @Override
+  public String getId() {
+    return this.isoCode;
+  }
 
 }

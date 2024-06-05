@@ -15,7 +15,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class UserDocumentType {
+public class UserDocumentType implements BaseEntity<String> {
 
   @Id
   @Column(length = 2)
@@ -23,5 +23,10 @@ public class UserDocumentType {
 
   @Column(nullable = false, length = 40)
   private String documentName;
+
+  @Override
+  public String getId() {
+    return this.userDocumentTypeId;
+  }
 
 }

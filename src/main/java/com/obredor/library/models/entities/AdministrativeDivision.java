@@ -19,7 +19,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class AdministrativeDivision {
+public class AdministrativeDivision implements BaseEntity<AdministrativeDivisionId> {
   
   @EmbeddedId
   private AdministrativeDivisionId administrativeDivisionId;
@@ -30,4 +30,9 @@ public class AdministrativeDivision {
   @ManyToOne
   @JoinColumn(name = "countryIsoCode", referencedColumnName = "isoCode", updatable = false, insertable = false)
   private Country country;
+
+  @Override
+  public AdministrativeDivisionId getId() {
+    return this.administrativeDivisionId;
+  }
 }

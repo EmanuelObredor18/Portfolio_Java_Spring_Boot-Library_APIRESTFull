@@ -24,7 +24,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Builder
 @Data
-public class UserLocation {
+public class UserLocation implements BaseEntity<Long> {
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,4 +59,9 @@ public class UserLocation {
   @ManyToOne
   @JoinColumn(name = "cityCode", referencedColumnName = "cityId", insertable = false, updatable = false)
   private City city;
+
+  @Override
+  public Long getId() {
+    return this.userLocationId;
+  }
 }
