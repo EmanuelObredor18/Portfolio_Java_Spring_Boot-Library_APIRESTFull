@@ -3,13 +3,13 @@
 ***
 <p align="center">
   <a href="https://www.java.com/en/">
-    <img src="https://img.shields.io/badge/made_with-Java-red" alt="Java logo">
+    <img src="https://img.shields.io/badge/Made_with-Java-red" alt="Java logo">
   </a>
   <a href="https://www.java.com/en/">
-    <img src="https://img.shields.io/badge/spring-3.2.5-white?logo=spring" alt="Spring logo">
+    <img src="https://img.shields.io/badge/Spring-3.2.5-white?logo=spring" alt="Spring logo">
   </a>
   <a href="https://www.java.com/en/">
-    <img src="https://img.shields.io/badge/spring_boot-3.2.5-white?logo=spring-boot" alt="Spring Boot logo">
+    <img src="https://img.shields.io/badge/Spring_Boot-3.2.5-white?logo=spring-boot" alt="Spring Boot logo">
   </a>
 </p>
 
