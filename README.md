@@ -1,6 +1,4 @@
 # Library APIRESTFull
-### A portfolio Java project by Mike Lauren (Emanuel Obredor)
-***
 <p align="center">
   <a href="https://www.java.com/en/">
     <img src="https://img.shields.io/badge/Made_with-Java-red" alt="Java logo">
